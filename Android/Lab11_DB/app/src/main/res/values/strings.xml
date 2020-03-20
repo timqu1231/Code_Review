@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lab11_DB</string>
+    <string name="button">Get</string>
+    <string name="display"></string>
+</resources>

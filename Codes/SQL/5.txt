@@ -1,0 +1,52 @@
+In an SQL query, which SQL keyword must be used to remove duplicate rows from the result table?DISTINCT
+In an SQL query, which of the following symbols is used by ANSI-92 SQL to represent a single unspecified character?_ (underscore)
+Given a table with the structure: EMPLOYEE (EmpNo, Name, Salary, HireDate), which of the following would find all employees whose name begins with the letter "S" using standard SQL?SELECT *FROM EMPLOYEE WHERE Name LIKE 'S%';
+In an SQL query, which SQL keyword is used with GROUP BY to select groups meeting specified criteria?HAVING
+Based on the tables below, which of the following ANSI SQL commands would return the average customer Balance grouped by SalesRepNo?	SELECT AVG (Balance) FROM CUSTOMER GROUP BY SalesRepNo;
+What is the most common type of DBMS Model ?Relational
+Who is the creator of the Relational Model ?E.F. Codd, IBM researcher
+For the statement :    SELECT     x    FROM  y; x   can be   Columns of tables that exist in table  y
+For the statement   SELECT     x       FROM  y; y   can be   Tables
+Metadata  is 	Data about data
+The columns of a relation are sometimes called "tuples"False
+A relation can have only one candidate key 	False
+Which of the following is true in a relation? The order of the rows is unimportant
+When designing a database, one of the candidate keys in a relation is selected as the:primary key
+If the removal of facts about one entity results in the unintentional loss of data about another entity, this is referred to as a(n):deletion anomaly
+
+A database stores data and relationships.
+A surrogate key is a primary key field that is automatically assigned by the computer. 
+The Database Management System (DBMS) creates, processes, and administers databases.
+Structured Query Language (SQL) is an internationally recognized standard database language that is used by all commercial DBMSs.
+A database is a self-describing collection of integrated tables.
+The tables are called integrated because they store data about the relationships between the rows of data.
+A database is called self-describing because it stores a description of itself.
+The self-describing data is called metadata, which is data about data.
+The Microsoft Access DBMS engine is called the Access Data Engine (ADE).
+The dominant database model is the relational database model—all current major DBMS products are based on it.
+It was created by IBM engineer E. F. Codd in 1970.
+It was based on mathematics called relational algebra.
+Business intelligence (BI) systems are information systems that assist managers and other professionals:AssessmentAnalysisPlanningControl
+Ad-hoc queries:Questions that can be answered using database data
+Structured Query Language (SQL) was developed by the IBM Corporation in the late 1970’s.
+SQL was endorsed as a U.S. national standard by the American National Standards Institute (ANSI) in 1992 [SQL-92].
+SQL is not a full featured programming language.
+C, C#, Java
+SQL is a data sublanguage for creating and processing database data and metadata.
+SQL is ubiquitous in enterprise-class DBMS products.
+SQL programming is a critical skill. 
+SQL statements can be divided into five categories:Data definition language (DDL)
+Data manipulation language (DML) statementsSQL/Persistent Stored Modules (SQL/PSM) statementsTransaction control language (TCL) statementsData control language (DCL) statements
+The SQL LIKE operator and SQL NOT LIKE operator can be combined with wildcard symbols:
+SQL 92 Standard (SQL Server, MySQL, etc.): _    =   exactly one character %  =   any set of one or more characters
+Microsoft Access (based on MS DOS) ?    =   exactly one character *     =   any set of one or more characters
+SQL provides two different techniques for querying data from multiple tables:             The SQL subquery The SQL join
+A set is represented by a labeled circle.
+A subset is a portion of a set that is contained entirely within the set.
+The union of two sets represents a set that contains all values in both sets. This is equivalent to an OR logical operation(A OR B).
+The intersection of two sets represents the area common to both sets. This is equivalent to an AND logical operation(A AND B).
+The complement of set B in set A represents everything in set A that is not in set B. This is equivalent to a logical operation using NOT (A NOT B).
+The requirement that all of the values in a column are of the same kind is know as the domain integrity constraint.
+The attribute on the left side of the functional dependency is called the determinant.
+The requirement that, in order to function properly, the primary key must have unique data values for every row in the table is know as the entity integrity constraint.
+Deletion anomaly/Insertion anomaly/Update anomaly

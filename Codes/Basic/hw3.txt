@@ -1,0 +1,52 @@
+maze: some number in map cannot be step on; and, make sure pacamn can go to end;
+
+eating-doc: if pacman step on the position, number of position will be 3, goest on positoin is 2, original positoin is 1; after pacman eating and leaving, position will be 0; 
+
+pacman: start at top-left; gost: start at middle of map(10*10):4,4;4,5;5,4;5,5;
+
+pacman and gost on same position, use gost;
+
+fix pacman and gost : 3 , 2;
+
+2D: maze[][]=1(all original number is 1), gost[][]=2(gost on maze will be 2),
+pacman[][]=3(pacman on position will be 3), after pacman eating doc, maze[][] = 0;
+
+need 2D array[][]: by int[][] multi = new int[10][10];
+for (int i = 0; i<10; i++)
+	for(j =0  ; j<  10;j++)
+	int[j][i]	array = "specific number";
+
+move: array[x][y]--> random: 0-->up 1, 1-->down 1, 2-->left 1, 
+
+assign value in maze, ghost, pacman, eatean maze, wall = 1, 2, 3, 0, 99;
+
+assign some fix index value in maze as wall, use '#';another use '*';eatten use ' '.
+
+1. create 3 gost array by ghost1[][], ghost2[][], ghost3[][]; assign 2 to them(never change)
+2. create 1 pacman array and position [0][0] and update position at the end of loop;
+3. check positon and print out map;
+4. update all value by index:
+   maze:  before ghost:1, after ghost:1, on_ghost:2; before pacman:1, after pacman: 0, on-pacman:3; wall: 99;
+5. need temp for pacman on maze: example: maze[x][y] = 1; temp = [x][y]; when pacman is [x][y], maze[x][y] = 3,
+pacman move to [(new)x][(new)y],int j = temp[x], int k= temp[y] maze[j][k]= 0.
+
+update position, print map, random number.
+
+ramdom --> ghost
+move ghost then change last ghost position back: need ghost, temp ghost;
+
+temp_ghost position before step to next 
+ghost position value will step on
+
+**********
+***#####** 1,3  1,4  1,5  1,6  1,7
+***#***#** 2,3  2,7 
+***#*#*#** 3,3  3,5  3,7
+*#******** 4,1
+******#*** 5,6
+**#*#***** 6,2  6,4
+**#*###*** 7,2  7,4 7,5 7,6
+****#***** 8,4
+**********
+
+

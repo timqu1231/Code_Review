@@ -1,0 +1,151 @@
+/***************************/
+/* Name: Feiyang Qu*/
+*/ /* Class: CS5060
+/* Term: Fall 2017 */
+/* Lab #: 3 */
+/***************************/
+
+/* What pets are in the database? */
+
+SELECT *
+FROM PET;
+
+/* What are the names of the pets in the database? */
+
+SELECT name
+FROM PET;
+
+/* What are the ID numbers and breeds of the pets in the database? */
+
+SELECT ID,breed
+FROM PET;
+
+/* What are the names, species, and breeds of the pets in the database? */
+
+SELECT name,species,breed
+FROM PET;
+
+/* What are the names, genders, and altered status of the pets in the database? */
+
+SELECT name,gender,altered
+FROM PET;
+
+/* What dogs are in the database?  */
+
+SELECT *
+FROM PET
+WHERE species = 'Dog';
+
+/* What cats are in the database? */
+
+SELECT *
+FROM PET
+WHERE species = 'Cat';
+
+/* What rabbits are in the database? */
+
+SELECT *
+FROM PET
+WHERE species = 'Rabbit';
+
+/* What pets are female? */
+
+SELECT *
+FROM PET
+WHERE species = 'Female';
+
+/* What pets are male? */
+
+SELECT *
+FROM PET
+WHERE species = 'Male';
+
+/* What is the total number of scores received for the tests taken? */
+
+SELECT count(score)
+FROM TEST_SCORES;
+
+/* What is the sum of the scores of the tests taken? */
+
+SELECT sum(score)
+FROM TEST_SCORES;
+
+/* What is the average of the scores of the tests taken? */
+
+SELECT average(score)
+FROM TEST_SCORES;
+
+/* What is the lowest score of the tests taken? */
+
+SELECT min(score)
+FROM TEST_SCORES;
+
+/* What is the highest score of the tests taken? */
+
+SELECT max(score)
+FROM TEST_SCORES;
+
+/* What is the total number of scores received by each student?  */
+
+SELECT StudentID,
+	count(score)
+FROM Test_SCORES
+GROUP BY StudentID;
+
+/* What is the total number of scores received for each test?  */
+
+SELECT TestID,
+	count(score)
+FROM TEST_SCORES
+GROUP BY TestID;
+
+/* What is the sum of the scores for each student? */
+
+SELECT StudentID,
+	sum(Score)
+FROM TEST_SCORES
+GROUP BY StudentID;
+
+/* What is the average score for each test? */
+
+SELECT TestID,
+	average(score)
+FROM TEST_SCORES
+GROUP BY TestID;
+
+/* What is the average score for each student? */
+
+SELECT StudentID,
+	average(score)
+FROM TEST_SCORES
+GROUP BY StudentID;
+
+/* What is the lowest score received for each test? */
+
+SELECT TestID,
+	min(score)
+FROM TEST_SCORES
+GROUP BY TestID;
+
+/* What is the lowest score received by each student? */
+
+SELECT StudentID,
+	min(score)
+FROM TEST_SCORES
+GROUP BY StudentID;
+
+/* What is the highest score received for each test? */
+
+SELECT TestID,
+	max(score)
+FROM TEST_SCORES
+GROUP BY TestID;
+
+/* What is the highest score received by each student?  */
+
+SELECT StudentID,
+	max(score)
+FROM TEST_SCORES
+GROUP BY StudentID;
+
+

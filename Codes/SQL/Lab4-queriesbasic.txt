@@ -1,0 +1,174 @@
+/***************************/
+/* Name: Feiyang Qu */
+/* Class: CS5060 */
+/* Term: Fall 2017 */
+/* Lab #: 4 */
+/***************************/
+
+/* What is the total number of scores for each test with a total score of at least 200? */
+
+SELECT TestID,
+	count(score)
+FROM TEST_SCORES
+GROUP BY TestID
+HAVING sum(score)>=200;
+
+/* What is the total number of scores for each student with a total score of at least 200? */
+
+SELECT StudentID,
+	count(score)
+FROM TEST_SCORES
+GROUP BY StudentID
+HAVING sum(score)>=200;
+
+/* What is the total number of scores for each student who has taken exactly three tests (ie has 3 scores)? */
+
+SELECT StudentID,
+	count(score)
+FROM TEST_SCORES
+GROUP BY StudentID
+HAVING count(score)=3;
+
+/* What is the total number of scores for each test that has been taken by exactly 3 students (ie has 3 scores)? */
+
+SELECT TestID,
+	count(score)
+FROM TEST_SCORES
+GROUP BY TestID
+HAVING count(score)=3;
+
+/* What is the average score for each test which has received exactly three scores (ie taken by 3 students)? */
+
+SELECT TestID,
+	average(score)
+FROM TEST_SCORES
+GROUP BY TestID
+HAVING count(score)=3;
+
+/* What is the average score for each student with exactly three scores (ie taken 3 tests)?  */
+
+SELECT StudentID,
+	average(score)
+FROM TEST_SCORES
+GROUP BY StudentID
+HAVING count(score)=3;
+	
+/* What is the lowest score for each test with exactly three scores (ie taken by 3 students)? */
+
+SELECT TestID,
+	min(score)
+FROM TEST_SCORES
+GROUP BY TestID
+HAVING count(score)=3;
+
+/* What is the lowest score for each student with exactly three scores (ie taken 3 tests)? */
+
+SELECT StudentID,
+	min(score)
+FROM TEST_SCORES
+GROUP BY StudentID
+HAVING count(score)=3;
+
+/* What is the highest score for each test with exactly three scores (ie taken by 3 students)?  */
+
+SELECT TestID,
+	max(score)
+FROM TEST_SCORES
+GROUP BY TestID
+HAVING count(score)=3;
+
+/* What is the highest score for each student with exactly three scores (ie taken 3 tests)?  */
+
+SELECT StudentID,
+	max(score)
+FROM TEST_SCORES
+GROUP BY StudentID
+HAVING count(score)=3;
+
+/* What are the names of all of the different pets in the database?  */
+
+SELECT name
+FROM PET;
+
+/* What are the distinct names of the pets in the database? */
+
+SELECT DISTINCT name
+FROM PET;
+
+/* What are the species of all of the different pets in the database? */
+
+SELECT species
+FROM PET;
+
+/* What are the distinct species of the pets in the database? */
+
+SELECT DISTINCT species
+FROM PET;
+
+/* What are the genders of all of the different pets in the database?  */
+
+SELECT gender
+FROM PET;
+
+/* What are the distinct genders of the pets in the database? */
+
+SELECT DISTINCT gender
+FROM PET;
+
+/* What are the genders and altered status of all of the different pets in the database? */
+
+SELECT gender,altered
+FROM PET;
+
+/* What are the distinct genders and altered status of the pets in the database?  */
+
+SELECT DISTINCT gender,altered
+FROM PET;
+
+/* Who are the pets in the database, sorted by ID number?  */
+
+SELECT *
+FROM PET
+ORDER BY ID;
+ 
+/* Who are the pets in the database, sorted by name? */
+
+SELECT *
+FROM PET
+ORDER BY name;
+
+/* Who are the pets in the database, sorted by name, in reverse order? */
+
+SELECT *
+FROM PET
+ORDER BY name DESC;
+
+/* What are the names, species, and breeds of the pets in the database, sorted by ID number?  */
+
+SELECT name,species,breed
+FROM PET
+ORDER BY ID;
+
+/* What are the names, species, and breeds of the pets in the database, sorted by name? */
+
+SELECT name,species,breed
+FROM PET
+ORDER BY name;
+
+/* What are the names, species, and breeds of the pets in the database, sorted by name, in reverse order? */
+
+SELECT name,species,breed
+FROM PET
+ORDER BY name DESC;
+
+/* What are the names of the pets in the database, sorted by ID number?  */
+
+SELECT name
+FROM PET
+ORDER BY ID;
+
+/* What are the names of the pets in the database, sorted by name?  */
+
+SELECT name
+FROM PET
+ORDER BY name;

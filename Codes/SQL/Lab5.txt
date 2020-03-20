@@ -1,0 +1,62 @@
+/***************************/
+/* Name: Feiyang Qu*/
+/* Class: CS 5060 */
+/* Term: Fall 2017 */
+/* Lab #: 5 */
+/***************************/
+
+/* What are all the possible combinations of pets and owners?*/ 
+
+SELECT *
+FROM PET,OWNER;
+
+/* Who are the pets and who are their owners?*/ 
+
+SELECT *
+FROM PET,OWNER
+WHERE PET.OwnerID = OWNER.OwnerID;
+
+/* What are the pet names, species, breeds, and owner names? */ 
+
+SELECT name,species,breed,ownername
+FROM PET,OWNER
+WHERE PET.OwnerID = OWNER.OwnerID;
+
+/*What are the pet ID's and owner ID's?/ 
+
+SELECT ID, OWNER.OwnerID
+FROM PET,OWNER
+WHERE PET.OwnerID = OWNER.OwnerID;
+
+/* Who are the pets and their owners, as well as people without pets?*/ 
+
+SELECT *
+FROM PET,OWNER
+WHERE PET.OwnerID(+) = OWNER.OwnerID;
+
+/* What are the pet ID's and owner ID's of the pets and their owners, as well as people
+without pets?*/ 
+
+SELECT ID, OWNER.OwnerID
+FROM PET,OWNER
+WHERE PET.OwnerID(+) = OWNER.OwnerID;
+
+/* What are the pet names, species, breeds, and owner names of the pets and their
+owners, as well as people without pets?*/ 
+
+SELECT name,species,breed, ownername
+FROM PET,OWNER
+WHERE PET.OwnerID(+) = OWNER.OwnerID;
+
+/* Who are the pets and their owners, as well animals without owners?*/ 
+
+SELECT *
+FROM PET,OWNER
+WHERE PET.OwnerID = OWNER.OwnerID(+);
+
+/* What are the pet ID's and owner ID's of the pets and their owners, as well animals
+without owners?*/ 
+
+SELECT ID, OWNER.OwnerID
+FROM PET,OWNER
+WHERE PET.OwnerID = OWNER.OwnerID(+);

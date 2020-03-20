@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab4-Feiyang Qu</string>
+    <string name="user">User Name</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="back">Go Back</string>
+    <string name="accept"></string>
+    <string name="reject">Log in fail! Please go back, try it again!</string>
+</resources>

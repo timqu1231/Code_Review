@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Resume</string>
+    <string name="apple">apple</string>
+    <string name="orange">orange</string>
+    <string name="grape">grape</string>
+    <string name="done">done</string>
+</resources>

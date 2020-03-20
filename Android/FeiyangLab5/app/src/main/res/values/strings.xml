@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Feiyang-Lab5</string>
+    <string name="main_text">Open Browser</string>
+    <string name="main_button">TRIGGER INTEND</string>
+    <string name="main1_text">URL: http://developer.android.com in Activity1</string>
+    <string name="main1_button">BACK</string>
+    <string name="main2_text">URL: http://developer.android.com in Activity2</string>
+    <string name="main2_button">BACK</string>
+    <string name="main3_text">URL: http://developer.android.com in Activity3</string>
+    <string name="main3_button">BACK</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:cardview="http://schemas.android.com/tools"
+    android:background="@drawable/free3">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        cardview:cardUseCompatpadding='true'
+        cardview:cardCornerRadius="5dp"
+        cardview:cardElevation="5dp"
+        android:scrollbars="vertical"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"/>
+
+</RelativeLayout>

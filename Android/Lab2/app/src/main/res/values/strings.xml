@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Lab2</string>
+    <string name="Crust">Crust</string>
+    <string name="Topping">Topping</string>
+    <string name="toGoOrNo">To go or no?</string>
+    <string name="crispy">Crispy</string>
+    <string name="thick">Thick</string>
+    <string name="soggy">Soggy</string>
+    <string name="atRestaurant">At restaurant</string>
+    <string name="pickup">Pickup</string>
+    <string name="deliver">Deliver</string>
+    <string name="anchovies">Anchovies</string>
+    <string name="pineapple">Pineapple</string>
+    <string name="garlic">Garlic</string>
+    <string name="okra">Okra</string>
+    <string name="size">Size</string>
+    <string name="length">29 in</string>
+</resources>

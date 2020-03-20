@@ -1,0 +1,54 @@
+/***************************/
+/* Name:Feiyang Qu */
+/* Class: CS 5060 */
+/* Term: Fall 2017 */
+/* Lab #: 6 */
+/***************************/
+
+/* Who are the shelter animals and registered pets? */
+
+SELECT *
+FROM PET
+UNION
+SELECT *
+FROM SHELTER_ANIMAL;
+
+/* What are ID numbers of the registered pets as well as the shelter animals? */
+
+SELECT ID
+FROM PET
+UNION
+SELECT ID
+FROM SHELTER_ANIMAL; 
+
+/* What registered pets are from the shelter? */
+
+SELECT *
+FROM PET
+INTERSECT
+SELECT *
+FROM SHELTER_ANIMAL; 
+
+/* What are the ID numbers of the registered pets that are from the shelter? */
+
+SELECT ID
+FROM PET
+INTERSECT
+SELECT ID
+FROM SHELTER_ANIMAL; 
+
+/* What shelter animals are not registered pets? */
+
+SELECT *
+FROM SHELTER_ANIMAL
+MINUS
+SELECT *
+FROM PET;
+
+/* What are the ID numbers of the registered pets not from the shelter? */
+
+SELECT ID
+FROM PET
+MINUS
+SELECT ID
+FROM SHELTER_ANIMAL;

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab11</string>
+    <string name="name">Name</string>
+    <string name="grade">Grade</string>
+    <string name="add">ADD NAME</string>
+    <string name="retrieve">RETRIEVE STUDENTS</string>
+    <string name="display"></string>
+</resources>

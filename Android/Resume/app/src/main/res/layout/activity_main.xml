@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="?android:textAppearanceLarge"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/apple"
+                android:text="@string/apple"
+                android:onClick="selectItem"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/orange"
+                android:text="@string/orange"
+                android:onClick="selectItem"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grape"
+                android:text="@string/grape"
+                android:onClick="selectItem"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                android:id="@+id/done"
+                android:layout_gravity="center_horizontal"
+                android:onClick="finalResult"/>
+            <TextView
+                android:id="@+id/my_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World"
+                android:layout_gravity="center_horizontal"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radio Button"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:layout_gravity="center_horizontal"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_apple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apple"
+                    android:onClick="radioItem"/>
+
+                <RadioButton
+                    android:id="@+id/radio_orange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orange"
+                    android:onClick="radioItem"/>
+
+                <RadioButton
+                    android:id="@+id/radio_grape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/grape"
+                    android:onClick="radioItem"/>
+                <TextView
+                    android:id="@+id/radio_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:layout_gravity="center_horizontal"
+                    android:text="hello world"
+                    />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <!--<ToggleButton-->
+            <!--android:id="@+id/toggle_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textOn="Button On"-->
+            <!--android:textOff="Button Off"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:onClick="toggleClick"/>-->
+        <!--<Switch-->
+            <!--android:id="@+id/switch_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:textOn="Switch On"-->
+            <!--android:textOff="Switch Off"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/toggle_view"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal" />-->
+
+        <SeekBar
+            android:id="@+id/my_Seek_Bar"
+            android:layout_width="251dp"
+            android:layout_height="28dp"
+            android:max="10"
+            android:min="3"
+            android:progress="3"/>
+            <!--android:layout_marginStart="44dp"-->
+            <!--android:layout_marginLeft="44dp"-->
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Feiyang-HW1</string>
+    <string name="column0">column0</string>
+    <string name="column1">column1</string>
+    <string name="column2">column2</string>
+    <string name="column3">column3</string>
+    <string name="row0">row0</string>
+    <string name="BillTotal">Bill Total</string>
+    <string name="row1">row1</string>
+    <string name="tenpercent">10%</string>
+    <string name="fifteenpercent">15%</string>
+    <string name="tweentypercent">20%</string>
+    <string name="row2">row2</string>
+    <string name="Tip">Tip</string>
+    <string name="Tip1">0.00</string>
+    <string name="Tip2">0.00</string>
+    <string name="Tip3">0.00</string>
+    <string name="row3">row3</string>
+    <string name="Total">Total</string>
+    <string name="Total1">0.00</string>
+    <string name="Total2">0.00</string>
+    <string name="Total3">0.00</string>
+    <string name="row4">row4</string>
+    <string name="Custom">Custom</string>
+    <string name="SeekBar_Display">0%</string>
+    <string name="row5">row5</string>
+    <string name="Tip4">Tip</string>
+    <string name="Tip_Display">0.00</string>
+    <string name="Total4">Total</string>
+    <string name="Display_Total">0.00</string>
+
+</resources>

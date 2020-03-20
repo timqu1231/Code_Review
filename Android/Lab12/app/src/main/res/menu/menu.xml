@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/color"
+            android:title="color"
+            android:titleCondensed="color"/>
+        <item android:id="@+id/reset"
+            android:title="reset"
+            android:titleCondensed="reset"/>
+        <item android:id="@+id/circle"
+            android:title="circle"
+            android:titleCondensed="circle"/>
+        <item android:id="@+id/triangle"
+            android:title="triangle"
+            android:titleCondensed="triangle"/>
+        <item android:id="@+id/rectangle"
+            android:title="rectangle"
+            android:titleCondensed="rectangle"/>
+        <item android:id="@+id/shrink"
+            android:title="shrink"
+            android:titleCondensed="shrink"/>
+        <item android:id="@+id/enlarge"
+            android:title="enlarge"
+            android:titleCondensed="enlarge"/>
+</menu>

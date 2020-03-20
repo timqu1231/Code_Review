@@ -1,0 +1,125 @@
+/***************************/
+/* Name: Feiyang Qu */
+/* Class: CS5060 */
+/* Term: Fall 2018 */
+/* Assgn #: 4 */
+/***************************/
+
+/* A */
+
+USE WPC
+
+SELECT * 
+FROM PROJECT;
+
+/* B */
+
+USE WPC
+
+SELECT ProjectID, Name, StartDate, EndDate
+FROM PROJECT;
+
+/* C */
+
+USE WPC
+
+SELECT *
+FROM PROJECT
+WHERE StartDate < '01-AUG-08';
+
+/* D */
+
+USE WPC
+
+SELECT *
+FROM PROJECT
+WHERE EndDate IS NULL;
+
+/* E */
+
+USE WPC
+
+SELECT ProjectID, E.EmployeeNumber, LastName, FirstName, Phone
+FROM ASSIGNMENT AS A INNER JOIN EMPLOYEE AS E
+	 ON A.EmployeeNumber=E.EmployeeNumber;
+
+/* F */
+
+USE WPC
+
+SELECT P.ProjectID, Name AS ProjectName,
+       	P.Department AS ProjectDepartment,
+	E.EmployeeNumber, LastName, FirstName,
+	Phone AS EmployeePhone
+FROM (ASSIGNMENT AS A INNER JOIN EMPLOYEE AS E
+	ON A.EmployeeNumber=E.EmployeeNumber)
+      INNER JOIN PROJECT AS P
+	ON A.ProjectID=P.ProjectID;
+
+/* G */
+
+USE WPC
+
+SELECT P.ProjectID, Name AS ProjectName,
+	D.DepartmentName AS ProjectDepartment,
+	D.Phone AS DepartmentPhone,
+	E.EmployeeNumber, LastName, FirstName,
+	E.Phone AS EmployeePhone
+FROM ((ASSIGNMENT AS A INNER JOIN EMPLOYEE AS E
+	 ON A.EmployeeNumber=E.EmployeeNumber)
+         INNER JOIN PROJECT AS P
+       ON A.ProjectID=P.ProjectID)
+       INNER JOIN DEPARTMENT AS D
+      ON P.Department=D.DepartmentName
+ORDER BY P.ProjectID;
+
+
+/* H */
+
+USE WPC
+
+SELECT P.ProjectID, Name AS ProjectName,
+       	D.DepartmentName AS ProjectDepartment,
+	D.Phone AS DepartmentPhone,
+	E.EmployeeNumber, LastName, FirstName,
+	E.Phone AS EmployeePhone
+FROM ((ASSIGNMENT AS A INNER JOIN EMPLOYEE AS E
+	 ON A.EmployeeNumber=E.EmployeeNumber)
+	 INNER JOIN PROJECT AS P
+       ON A.ProjectID=P.ProjectID)
+       INNER JOIN DEPARTMENT AS D
+     ON P.Department=D.DepartmentName
+WHERE DepartmentName='Marketing'
+ORDER BY P.ProjectID;
+
+/* I */
+
+USE WPC
+
+SELECT COUNT(*) AS NumberOfMarketingProjects
+FROM PROJECT
+WHERE Department='Marketing';
+
+/* J */
+
+USE WPC
+
+SELECT SUM(MaxHours) AS TotalMaxHours
+FROM PROJECT
+WHERE Department='Marketing';
+
+/* K */
+
+USE WPC
+
+SELECT AVG(MaxHours) AS AverageMaxHours
+FROM PROJECT
+WHERE Department='Marketing';
+
+/* L */
+
+USE WPC
+
+SELECT Department, COUNT(*) AS NumberOfDepartmentProjects
+FROM PROJECT
+GROUP BY Department;

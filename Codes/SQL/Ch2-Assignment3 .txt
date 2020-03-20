@@ -1,0 +1,300 @@
+/***************************/
+/* Name: Feiyang Qu */
+/* Class: CS5060/01 */
+/* Term: Fall 2017 */
+/* Assgn #: 3 */
+/***************************/
+
+/* 2.28 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description,WarehouseID
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING QuantityOnHand = 0
+
+OR QuantityOnOrder = 0
+
+ORDER BY WarehouseID DESC, SKU;
+
+/* 2.29 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description,WarehouseID,QuantityOnHand
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING QuantityOnHand > 1
+
+AND QuantityOnHand < 10;
+
+/* 2.30 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description,WarehouseID,QuantityOnHand
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING QuantityOnHand BETWEEN 2 AND 9;
+
+/* 2.31 */
+
+USE Cape_Codd
+
+SELECT DISTINCT SKU,SKU_Description
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING SKU_Description LIKE 'Half-dome%';
+
+/* 2.32 */
+
+USE Cape_Codd
+
+SELECT DISTINCT SKU,SKU_Description
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING SKU_Description LIKE '%Climb%';
+
+/* 2.33 */
+
+USE Cape_Codd
+
+SELECT DISTINCT SKU,SKU_Description
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING SKU_Description LIKE '__d%';
+
+/* 2.34 */
+
+USE Cape_Codd
+
+SELECT COUNT(QuantityOnHand)ASNumberOfRows,
+
+       SUM(QuantityOnHand)ASTotalQuantityOnHand,
+
+       AVG(QuantityOnHand)ASAverageQuantityOnHand,
+	   
+       MAX(QuantityOnHand)ASMaximumQuantityOnHand,
+	   
+       MIN(QuantityOnHand)ASMinimumQuantityOnHand
+	   
+FROM INVENTORY;
+
+/* 2.35 */
+
+/*The COUNT() function returns the number of rows that matches a specified criteria;The SUM() function returns the total sum of a numeric column.*/
+
+/* 2.36 */
+
+USE Cape_Codd
+
+SELECT WarehouseID, SUM(QuantityOnHand) AS TotalItemsOnHand
+
+FROM INVENTORY
+
+GROUP BY WarehouseID
+
+ORDER BY TotalItemsOnHand DESC;
+
+/* 2.37 */
+
+USE Cape_Codd
+
+SELECT WarehouseID, SUM (QuantityOnHand) AS TotalItemsOnHandLT3
+
+FROM INVENTORY
+
+WHERE QuantityOnHand<3
+
+GROUP BY WarehouseID
+
+ORDER BY TotalItemsOnHandLT3 DESC;
+
+/* 2.38 */
+
+USE Cape_Codd
+
+SELECT WarehouseID, SUM (QuantityOnHand) AS TotalItemsOnHandLT3
+
+FROM INVENTORY
+
+WHERE QuantityOnHand<=3
+
+GROUP BY WarehouseID
+
+HAVING SUM (QuantityOnHand) <2
+
+ORDER BY TotalItemsOnHandLT3 DESC;
+
+/* 2.39 */
+
+/* WHERE Use firstly. */
+
+/* 2.40 */
+
+USE Cape_Codd
+
+SELECT SKU, SKU_Description, WAREHOUSE.WarehouseID, WarehouseCity, WarehouseState
+
+FROM INVENTORY, WAREHOUSE
+
+WHERE INVENTORY.WarehouseID=WAREHOUSE.WarehouseID
+
+AND (WarehouseCity = 'Atlanta' OR WarehouseCity = 'Bangor' OR WarehouseCity = 'Chicago');
+
+/* 2.41 */
+
+USE Cape_Codd
+
+SELECT SKU, SKU_Description, WAREHOUSE.WarehouseID, WarehouseCity, WarehouseState
+
+FROM INVENTORY, WAREHOUSE
+
+WHERE INVENTORY.WarehouseID=WAREHOUSE.WarehouseID AND WarehouseCity IN ('Atlanta', 'Bangor' ,'Chicago');
+
+/* 2.42 */
+
+USE Cape_Codd
+
+SELECT SKU, SKU_Description, WAREHOUSE.WarehouseID, WarehouseCity, WarehouseState
+
+FROM INVENTORY, WAREHOUSE
+
+WHERE INVENTORY.WarehouseID=WAREHOUSE.WarehouseID
+
+AND WarehouseCity <> 'Atlanta'
+
+AND WarehouseCity <> 'Bangor'
+
+AND WarehouseCity <> 'Chicago';
+
+/* 2.43 */
+
+USE Cape_Codd
+
+SELECT SKU, SKU_Description, WAREHOUSE.WarehouseID, WarehouseCity, WarehouseState
+
+FROM INVENTORY, WAREHOUSE
+
+WHERE INVENTORY.WarehouseID=WAREHOUSE.WarehouseID
+
+AND WarehouseCity NOT IN ('Atlanta', 'Bangor' ,'Chicago');
+
+/* 2.44 */
+
+USE Cape_Codd
+
+SELECT SKU_Description+' is in a warehouse in ' + WarehouseCity AS ITEM_Location
+
+FROM INVENTORY, WAREHOUSE
+
+WHERE INVENTORY.WarehouseID=WAREHOUSE.WarehouseID;
+
+/* 2.45 */
+
+USE Cape_Codd
+
+SELECT SKU, SKU_Description, WarehouseID
+
+FROM INVENTORY
+
+WHERE WarehouseID IN
+
+(SELECT WarehouseID
+
+FROM WAREHOUSE
+
+WHERE Manager = 'Lucille Smith');
+
+/* 2.46 */
+
+USE Cape_Codd
+
+SELECT SKU, SKU_Description, WAREHOUSE.WarehouseID
+
+FROM INVENTORY, WAREHOUSE
+
+WHERE INVENTORY.WarehouseID=WAREHOUSE.WarehouseID
+
+AND Manager = 'Lucille Smith';
+
+/* 2.47 */
+
+USE Cape_Codd
+
+SELECT oi.sku, sku_description,sd.warehouseid
+
+FROM INVENTORY AS oi
+
+JOIN WAREHOUSE AS sd 
+
+    ON oi.WarehouseID=sd.WarehouseID
+
+WHERE sd.Manager LIKE 'Lucille Smith'
+
+ORDER BY oi.Sku, sd.WarehouseID;
+
+/* 2.48 */
+
+USE Cape_Codd
+
+SELECT WarehouseID, AVG(QuantityOnHand) AS AvgQuanOnHanPerWare
+
+FROM INVENTORY
+
+WHERE WarehouseID IN
+
+(SELECT WarehouseID
+
+    FROM Warehouse
+
+    WHERE Manager LIKE 'Lucille Smith')
+
+GROUP BY WarehouseID;
+
+/* 2.49 */
+
+USE Cape_Codd
+
+SELECT ware.WarehouseID, AVG(QuantityOnHand) AS 'AVG(QuantityOnHand)' 
+
+FROM INVENTORY inv JOIN WAREHOUSE ware 
+
+ON inv.WarehouseID = ware.WarehouseID 
+
+WHERE Manager = 'Lucille Smith' 
+
+GROUP BY ware.WarehouseID;
+
+/* 2.50 */
+
+USE Cape_Codd
+
+SELECT ware.WarehouseID, AVG(QuantityOnHand) AS 'AVG(QuantityOnHand)'
+
+FROM INVENTORY inv INNER JOIN warehouse ware
+
+ON inv.WarehouseID = ware.WarehouseID
+
+WHERE Manager = 'Lucille Smith'
+
+GROUP BY ware.WarehouseID;

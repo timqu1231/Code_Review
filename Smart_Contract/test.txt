@@ -1,0 +1,24 @@
+pragma solidity ^0.4.24;
+
+import "truffle/Assert.sol";
+import "../../contracts//Track.sol";
+
+contract TrackTest {
+    Track instance;
+    
+    function beforeEach() public {
+        instance = new Track();
+    } 
+  
+    function testSetOwner() public {
+        Assert.equal(instance.owner(), address(this), "missing owner address");
+    }
+
+    function testAddStatus() public {
+        bytes4 id = 0x7369656d;
+        bytes32 name = 0x7369656d6b610000000000000000000000000000000000000000000000000000; 
+        instance.addStatus(id, name);
+        Assert.equal(instance.getStatusCount(), 1, "wrong status number");
+        Assert.equal(instance.getStatusId(0), id, "wrong id");
+    }
+}

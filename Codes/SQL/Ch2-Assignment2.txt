@@ -1,0 +1,120 @@
+/***************************/
+/* Name: Feiyang Qu*/
+/* Class: CS50600/01 */
+/* Term: Fall 2017 */
+/* Assgn #: 2 */
+/***************************/
+
+/* 2.17 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description
+
+FROM INVENTORY;
+
+/* 2.18 */
+
+USE Cape_Codd
+
+SELECT SKU_Description, SKU
+
+FROM INVENTORY;
+
+/* 2.19 */
+
+USE Cape_Codd
+
+SELECT WarehouseID
+
+FROM INVENTORY;
+
+/* 2.20 */
+
+USE Cape_Codd
+
+SELECT DISTINCT WarehouseID
+
+FROM INVENTORY;
+
+/* 2.21 */
+
+USE Cape_Codd
+
+SELECT WarehouseID,SKU,SKU_Description,QuantityOnHand,QuantityOnOrder
+
+FROM INVENTORY;
+
+/* 2.22 */
+
+USE Cape_Codd
+
+SELECT *
+
+FROM INVENTORY;
+
+/* 2.23 */
+
+USE Cape_Codd
+
+SELECT WarehouseID,SKU,SKU_Description,QuantityOnHand,QuantityOnOrder
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnHand,QuantityOnOrder
+
+HAVING QuantityOnHand > 0;
+
+/* 2.24 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnHand,QuantityOnOrder
+
+HAVING QuantityOnHand = 0;
+
+/* 2.25 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description,WarehouseID
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING QuantityOnHand = 0
+
+ORDER BY WarehouseID;
+
+/* 2.26 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description,WarehouseID
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING QuantityOnHand > 0
+
+ORDER BY WarehouseID DESC, SKU;
+
+/* 2.27 */
+
+USE Cape_Codd
+
+SELECT SKU,SKU_Description,WarehouseID
+
+FROM INVENTORY
+
+GROUP BY WarehouseID,SKU,SKU_Description,QuantityOnhand,QuantityOnOrder
+
+HAVING QuantityOnHand = 0 AND QuantityOnOrder > 0
+
+ORDER BY WarehouseID DESC, SKU;

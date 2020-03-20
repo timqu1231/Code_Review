@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FeiyangLab6</string>
+    <string name="random">Random Letter Service Home</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+    <string name="bind">BIND SERVICE</string>
+    <string name="unbind">UNBIND SERVICE</string>
+    <string name="get">GET RANDOM NUMBER</string>
+    <string name="display">Random Letter</string>
+</resources>
